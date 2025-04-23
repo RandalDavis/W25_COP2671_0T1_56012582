@@ -27,6 +27,8 @@ public class Bomb : MonoBehaviour
             AudioSource.PlayClipAtPoint(explosionSound, transform.position);
         }
 
+        FindFirstObjectByType<GameOverManager>().ShowGameOver();
+
         Destroy(player);     // destroy beachball
         Destroy(gameObject); // destroy bomb
     }
